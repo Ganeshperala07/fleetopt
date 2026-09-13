@@ -41,6 +41,19 @@
 
 ---
 
+## 📸 Production Application Screenshots & Interface Showcase
+
+<div align="center">
+
+| **Operations Command Dashboard** | **CNG Station Network** | **HCV Fleet Board** | **HCV Telemetry & Compliance** |
+| :---: | :---: | :---: | :---: |
+| <a href="docs/screenshots/fleetopt_main_dashboard.jpeg"><img src="docs/screenshots/fleetopt_main_dashboard.jpeg" width="220" alt="FleetOpt Operations Command Dashboard" /></a> | <a href="docs/screenshots/fleetopt_station_dashboard.jpeg"><img src="docs/screenshots/fleetopt_station_dashboard.jpeg" width="220" alt="CNG Station Network" /></a> | <a href="docs/screenshots/fleetopt_hcv_dashboard.jpeg"><img src="docs/screenshots/fleetopt_hcv_dashboard.jpeg" width="220" alt="HCV Fleet Board" /></a> | <a href="docs/screenshots/fleetopt_hcv_details.jpeg"><img src="docs/screenshots/fleetopt_hcv_details.jpeg" width="220" alt="HCV Telemetry & Compliance" /></a> |
+| **Real-Time Operations Command**<br/>• Calendar demand multipliers (1.0x, +20%, +50%)<br/>• Live fleet & corridor transit ETA KPIs<br/>• Next Best Action AI recommendation<br/>• 100 km Corridor Radar preview & launch | **Daughter Station Decanting**<br/>• AGA-8 Real-Gas Compressibility<br/>• 150 bar dynamic pressure arc gauge<br/>• 3-Bank Cascade cylinders (High/Mid/Low)<br/>• Top-up demand & Time-to-Dryout (TTD) | **HCV Cascade Tankers**<br/>• 650 kg mobile cascade tankers<br/>• 25 bar residual heel pressure tracking<br/>• Real-time mechanical status & location<br/>• One-tap quick driver dialer | **Mechanical Health & Safety**<br/>• PESO Hydro-test certification tracking<br/>• PRV burst disc safety verification<br/>• 92% Tire condition index monitor<br/>• Direct Call Driver action sheet |
+
+</div>
+
+---
+
 ## 📦 Direct APK Downloads
 
 Pre-compiled and signed binaries are available in [GitHub Releases](https://github.com/Ganeshperala07/fleetopt/releases):

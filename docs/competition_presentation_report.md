@@ -149,6 +149,13 @@ graph TD
 +-----------------------------------------------------------------------------------+
 ```
 
+### 3.3 Production UI Evidence & Telemetry Interface Showcase
+
+| Operations Command Dashboard | CNG Station Network & Cascades | HCV Fleet Board & Safety Telemetry |
+| :---: | :---: | :---: |
+| <img src="screenshots/fleetopt_main_dashboard.jpeg" width="230" alt="Main Dashboard" /> | <img src="screenshots/fleetopt_station_dashboard.jpeg" width="230" alt="Station Dashboard" /> | <img src="screenshots/fleetopt_hcv_dashboard.jpeg" width="230" alt="HCV Fleet Board" /> |
+| **Operations Command Core**<br/>• Dynamic Calendar Multiplier (1.0x, +20%, +50%)<br/>• Live Active Fleet, Cost Savings, and ETA metrics<br/>• Next Best Action AI recommendation banner<br/>• Integrated 100km Corridor Radar trigger | **Daughter Station Decanting**<br/>• AGA-8 Real-gas dynamic pressure arc (150 bar)<br/>• Usable mass (267 kg) vs Top-up demand (239 kg)<br/>• Time-to-Dryout (TTD: ~6.4 hours)<br/>• 3-Bank Cascade breakdown (High, Mid, Low) | **HCV Mobile Cascade Fleet**<br/>• 650 kg capacity cascade tankers with 25 bar heel<br/>• PESO compliance badges: Hydro-test & PRV Burst Disc<br/>• Tire condition index (92%) & CGS Yard location<br/>• Direct driver call integration |
+
 ---
 
 ## Section 4: Performance, Release Hardening & Security
