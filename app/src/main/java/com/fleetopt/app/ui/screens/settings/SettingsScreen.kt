@@ -1,5 +1,6 @@
 package com.fleetopt.app.ui.screens.settings
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -14,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -331,6 +333,41 @@ fun SettingsScreen(
                 }
             }
 
+            // 5. Developers & Engineering Team
+            item {
+                SectionHeader(title = "Developers & Authors")
+                Spacer(modifier = Modifier.height(FleetOptSpacing.sm))
+
+                Card(
+                    shape = RoundedCornerShape(FleetOptSpacing.radiusMd),
+                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Column(
+                        modifier = Modifier.padding(FleetOptSpacing.md),
+                        verticalArrangement = Arrangement.spacedBy(10.dp)
+                    ) {
+                        DeveloperRow(
+                            name = "Ganesh Perala",
+                            role = "Lead Architecture & Thermodynamics",
+                            githubHandle = "@Ganeshperala07",
+                            url = "https://github.com/Ganeshperala07"
+                        )
+
+                        HorizontalDivider(
+                            color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f)
+                        )
+
+                        DeveloperRow(
+                            name = "Yeshwanth Kumar",
+                            role = "HCV Fleet Logistics & Optimization",
+                            githubHandle = "@yeshwanthkumardomala",
+                            url = "https://github.com/yeshwanthkumardomala"
+                        )
+                    }
+                }
+            }
+
             item { Spacer(modifier = Modifier.height(FleetOptSpacing.xxl)) }
         }
     }
@@ -427,3 +464,64 @@ private fun InfoRow(label: String, value: String) {
         Text(text = value, style = MaterialTheme.typography.bodySmall, fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.onSurface)
     }
 }
+
+@Composable
+private fun DeveloperRow(
+    name: String,
+    role: String,
+    githubHandle: String,
+    url: String
+) {
+    val uriHandler = LocalUriHandler.current
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(FleetOptSpacing.radiusSm))
+            .clickable { uriHandler.openUri(url) }
+            .padding(vertical = 4.dp),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Column(modifier = Modifier.weight(1f)) {
+            Text(
+                text = name,
+                style = MaterialTheme.typography.titleSmall,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.onSurface
+            )
+            Text(
+                text = role,
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                fontSize = 11.sp
+            )
+        }
+
+        Surface(
+            shape = RoundedCornerShape(FleetOptSpacing.radiusSm),
+            color = MaterialTheme.colorScheme.surface,
+            border = BorderStroke(1.dp, MaterialTheme.colorScheme.primary.copy(alpha = 0.35f)),
+            modifier = Modifier.clickable { uriHandler.openUri(url) }
+        ) {
+            Row(
+                modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(4.dp)
+            ) {
+                Icon(
+                    Icons.Default.Code,
+                    contentDescription = null,
+                    modifier = Modifier.size(13.dp),
+                    tint = MaterialTheme.colorScheme.primary
+                )
+                Text(
+                    text = githubHandle,
+                    fontSize = 11.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    color = MaterialTheme.colorScheme.primary
+                )
+            }
+        }
+    }
+}
+

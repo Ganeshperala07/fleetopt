@@ -4,7 +4,7 @@
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21-purple.svg)](https://kotlinlang.org)
 [![Compose](https://img.shields.io/badge/Jetpack%20Compose-2024.11.00-blue.svg)](https://developer.android.com/jetpack/compose)
 [![Release](https://img.shields.io/badge/Release-v1.1.0-emerald.svg)](https://github.com/Ganeshperala07/fleetopt/releases)
-[![Developers](https://img.shields.io/badge/Developers-P.%20Ganesh%20%26%20Yesh-teal.svg)](https://github.com/Ganeshperala07/fleetopt)
+[![Developers](https://img.shields.io/badge/Developers-Ganesh%20Perala%20%26%20Yeshwanth%20Kumar-teal.svg)](https://github.com/Ganeshperala07/fleetopt)
 [![License](https://img.shields.io/badge/License-Proprietary-red.svg)](#)
 
 > **A physics-informed, AI-powered Decision Support System (DSS) engineered for City Gas Distribution (CGD) networks.** FleetOpt coordinates Heavy Commercial Vehicle (HCV) mobile cascade tankers between City Gate Mother compression hubs and decentralized Daughter Booster filling stations across a 100 km regional operational perimeter.
@@ -14,7 +14,7 @@
 ## ⚡ Key Capabilities & Engineering Highlights
 
 * 🗺️ **100 KM Regional Operational Perimeter Circle**: Zero-key OpenStreetMap & Leaflet geographic engine rendering an explicit 100 km perimeter circle around Shamshabad/Hyderabad CGS with 25 km, 50 km, and 75 km concentric rings. Plots CGS Mother Hubs, Daughter Stations (color-coded by pressure with pulsing critical indicators), live HCV tankers, and highway corridors.
-* 🎬 **Animated Boot Screen & Developer Attribution**: Smooth spring scale and alpha animation of the app logo with a pulsing cyan/teal halo ring and attribution badge for **P. Ganesh & Yesh**. Compatible with 100% of Android devices (Android 8 to 15).
+* 🎬 **Animated Boot Screen & Developer Attribution**: Smooth spring scale and alpha animation of the app logo with a pulsing cyan/teal halo ring and attribution badge for **Ganesh Perala & Yeshwanth Kumar**. Compatible with 100% of Android devices (Android 8 to 15).
 * 🔬 **Real-Gas Thermodynamics (AGA-8)**: Implements the AGA-8 Detail Equation of State to model natural gas compressibility ($Z \approx 0.835$ @ 200 bar), 50-bar dryout cutoffs, and Joule-Thomson expansion cooling ($-0.45\text{ K/bar}$).
 * 🧠 **Multi-Factor Dispatch Optimization**: Weights station inventory urgency (40%), corridor distance (20%), real-time traffic flow (15%), vehicle mechanical readiness (15%), and cascade capacity matching (10%).
 * 🛡️ **Cascade Overpressurization Prevention**: Mathematically clamps payloads to $\min(\text{capacity}, \max(50.0, \text{topUpDemand}))$ to ensure station cascades never exceed the 230 bar operating ceiling.
@@ -97,6 +97,10 @@ A complete slide-by-slide competition pitch deck and technical report is availab
 ---
 
 ## 👥 Authors & Developers
-* **P. Ganesh & Yesh**
-* **GitHub Profile**: [@Ganeshperala07](https://github.com/Ganeshperala07)
-* **Repository**: [https://github.com/Ganeshperala07/fleetopt](https://github.com/Ganeshperala07/fleetopt)
+
+| Developer | Core Focus & Engineering Contributions | GitHub Profile |
+| :--- | :--- | :--- |
+| **Ganesh Perala** | Lead Architecture, AGA-8 Thermodynamics, 100km Geographic Engine, Jetpack Compose UI | [![GitHub](https://img.shields.io/badge/GitHub-@Ganeshperala07-181717?style=flat&logo=github)](https://github.com/Ganeshperala07) |
+| **Yeshwanth Kumar** | HCV Fleet Logistics, Telemetry Integration, Dispatch DSS Optimization & Testing | [![GitHub](https://img.shields.io/badge/GitHub-@yeshwanthkumardomala-181717?style=flat&logo=github)](https://github.com/yeshwanthkumardomala) |
+
+* **Official Repository**: [https://github.com/Ganeshperala07/fleetopt](https://github.com/Ganeshperala07/fleetopt)

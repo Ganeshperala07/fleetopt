@@ -213,3 +213,12 @@ graph TD
 ### Slide 7: Conclusion & Vision
 * **Headline**: Powering the Clean Energy Transition Safely & Intelligently.
 * **Key Takeaway**: FleetOpt is scalable, PESO-compliant, field-ready, and built for production.
+
+---
+
+## Section 6: Engineering Team & Authors
+
+* **Ganesh Perala** — Lead Architecture, Real-Gas Thermodynamics (AGA-8), Core Android (Jetpack Compose) | GitHub: [@Ganeshperala07](https://github.com/Ganeshperala07)
+* **Yeshwanth Kumar** — HCV Fleet Logistics, Telemetry Infrastructure & Optimization | GitHub: [@yeshwanthkumardomala](https://github.com/yeshwanthkumardomala)
+* **Project Repository**: [https://github.com/Ganeshperala07/fleetopt](https://github.com/Ganeshperala07/fleetopt)
+

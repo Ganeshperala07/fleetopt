@@ -32,7 +32,7 @@ import kotlinx.coroutines.delay
 /**
  * Animated High-Performance Splash Screen.
  * Works uniformly across all Android OS versions (Android 8 to 15).
- * Features animated app branding, glowing pulse, and developer attribution for P. Ganesh & Yesh.
+ * Features animated app branding, glowing pulse, and developer attribution for Ganesh Perala & Yeshwanth Kumar.
  * Supports instant-skip on tap for quick competition demos.
  */
 @Composable
@@ -224,7 +224,7 @@ fun SplashScreen(
                     .padding(horizontal = 16.dp, vertical = 6.dp)
             ) {
                 Text(
-                    text = "P. Ganesh & Yesh",
+                    text = "Ganesh Perala & Yeshwanth Kumar",
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
                     color = colorScheme.primary
