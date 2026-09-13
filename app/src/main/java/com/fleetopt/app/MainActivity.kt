@@ -4,12 +4,13 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
+import androidx.compose.animation.Crossfade
+import androidx.compose.animation.core.tween
+import androidx.compose.runtime.*
 import androidx.navigation.compose.rememberNavController
 import com.fleetopt.app.ui.navigation.FleetOptNavGraph
 import com.fleetopt.app.ui.navigation.Screen
+import com.fleetopt.app.ui.screens.splash.SplashScreen
 import com.fleetopt.app.ui.theme.FleetOptTheme
 import com.fleetopt.app.ui.viewmodel.FleetOptViewModel
 import com.fleetopt.app.ui.viewmodel.FleetOptViewModelFactory
@@ -31,22 +32,35 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             val uiState by viewModel.uiState.collectAsState()
+            var isSplashFinished by remember { mutableStateOf(false) }
 
             FleetOptTheme(themeMode = uiState.themeMode) {
-                val navController = rememberNavController()
+                Crossfade(
+                    targetState = isSplashFinished,
+                    animationSpec = tween(durationMillis = 400),
+                    label = "splash_crossfade"
+                ) { finished ->
+                    if (!finished) {
+                        SplashScreen(
+                            onSplashComplete = { isSplashFinished = true }
+                        )
+                    } else {
+                        val navController = rememberNavController()
 
-                // Check for notification deep-link
-                LaunchedEffect(intent) {
-                    val navigateTo = intent.getStringExtra("navigate_to")
-                    if (navigateTo == "recommendation" || navigateTo == "dispatch") {
-                        navController.navigate(Screen.Recommendation.route)
+                        // Check for notification deep-link
+                        LaunchedEffect(intent) {
+                            val navigateTo = intent.getStringExtra("navigate_to")
+                            if (navigateTo == "recommendation" || navigateTo == "dispatch") {
+                                navController.navigate(Screen.Recommendation.route)
+                            }
+                        }
+
+                        FleetOptNavGraph(
+                            navController = navController,
+                            viewModel = viewModel
+                        )
                     }
                 }
-
-                FleetOptNavGraph(
-                    navController = navController,
-                    viewModel = viewModel
-                )
             }
         }
     }
