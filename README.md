@@ -100,7 +100,7 @@ A complete slide-by-slide competition pitch deck and technical report is availab
 
 | Developer | Core Focus & Engineering Contributions | GitHub Profile |
 | :--- | :--- | :--- |
-| **Ganesh Perala** | Lead Architecture, AGA-8 Thermodynamics, 100km Geographic Engine, Jetpack Compose UI | [![GitHub](https://img.shields.io/badge/GitHub-@Ganeshperala07-181717?style=flat&logo=github)](https://github.com/Ganeshperala07) |
-| **Yeshwanth Kumar** | HCV Fleet Logistics, Telemetry Integration, Dispatch DSS Optimization & Testing | [![GitHub](https://img.shields.io/badge/GitHub-@yeshwanthkumardomala-181717?style=flat&logo=github)](https://github.com/yeshwanthkumardomala) |
+| **Ganesh Perala** |Executive manager , Fleet Management, Telemetry & Testing | [![GitHub](https://img.shields.io/badge/GitHub-@Ganeshperala07-181717?style=flat&logo=github)](https://github.com/Ganeshperala07) |
+| **Yeshwanth Kumar** |System Architecture, AI & App Development | [![GitHub](https://img.shields.io/badge/GitHub-@yeshwanthkumardomala-181717?style=flat&logo=github)](https://github.com/yeshwanthkumardomala) |
 
 * **Official Repository**: [https://github.com/Ganeshperala07/fleetopt](https://github.com/Ganeshperala07/fleetopt)
