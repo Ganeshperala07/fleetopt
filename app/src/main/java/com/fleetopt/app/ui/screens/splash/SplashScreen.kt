@@ -174,7 +174,7 @@ fun SplashScreen(
             Spacer(modifier = Modifier.height(6.dp))
 
             Text(
-                text = "Virtual Pipeline & Cascade Inventory Orchestration",
+                text = "Cascade Inventory Orchestration & HCV Logistics",
                 style = MaterialTheme.typography.bodyMedium,
                 color = colorScheme.primary,
                 fontWeight = FontWeight.SemiBold,
@@ -184,7 +184,7 @@ fun SplashScreen(
             Spacer(modifier = Modifier.height(4.dp))
 
             Text(
-                text = "100 km Regional Corridor Network • Real-Time AI Dispatch",
+                text = "Real-Time AI Dispatch • Regional Corridor Network",
                 style = MaterialTheme.typography.labelSmall,
                 color = colorScheme.onSurfaceVariant.copy(alpha = 0.7f),
                 textAlign = TextAlign.Center

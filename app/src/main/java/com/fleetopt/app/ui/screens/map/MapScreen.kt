@@ -100,7 +100,7 @@ fun MapScreen(
                     Marker(
                         state = MarkerState(position = cgsLatLng),
                         title = "CGS - Shamshabad Mother Hub",
-                        snippet = "Fast-Fill Hub | 100 km Corridor Supply Radius",
+                        snippet = "City Gate Compression Hub | Fast-Fill Dispatch",
                         icon = BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)
                     )
 
@@ -147,7 +147,7 @@ fun MapScreen(
             }
         }
 
-        // Top Control Overlay: 100 KM Radius Badge + Engine Switcher
+        // Top Control Overlay: Engine Switcher & Live Traffic
         Column(
             modifier = Modifier
                 .align(Alignment.TopCenter)
@@ -155,31 +155,6 @@ fun MapScreen(
                 .padding(horizontal = 12.dp, vertical = 8.dp),
             verticalArrangement = Arrangement.spacedBy(6.dp)
         ) {
-            // 100 KM Corridor Perimeter Pill
-            Surface(
-                shape = RoundedCornerShape(20.dp),
-                color = colorScheme.surface.copy(alpha = 0.94f),
-                border = androidx.compose.foundation.BorderStroke(1.dp, Cyan500.copy(alpha = 0.5f)),
-                shadowElevation = 4.dp,
-                modifier = Modifier.align(Alignment.CenterHorizontally)
-            ) {
-                Row(
-                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(8.dp)
-                ) {
-                    Icon(Icons.Default.ShareLocation, contentDescription = null, tint = Cyan500, modifier = Modifier.size(16.dp))
-                    Text(
-                        text = "100 KM HYDERABAD CORRIDOR CIRCLE",
-                        fontSize = 11.sp,
-                        fontWeight = FontWeight.Bold,
-                        color = colorScheme.onSurface,
-                        letterSpacing = 0.5.sp
-                    )
-                    DataProvenanceBadge(provenance = Provenance.REAL)
-                }
-            }
-
             // Multi-Engine Switcher Row
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -191,7 +166,7 @@ fun MapScreen(
                     FilterChip(
                         selected = engineMode == MapEngineMode.GEO_MAP,
                         onClick = { engineMode = MapEngineMode.GEO_MAP },
-                        label = { Text("🗺️ 100km Map", fontSize = 10.sp, fontWeight = FontWeight.Bold) },
+                        label = { Text("🗺️ Geo Map", fontSize = 10.sp, fontWeight = FontWeight.Bold) },
                         colors = FilterChipDefaults.filterChipColors(
                             containerColor = colorScheme.surface.copy(alpha = 0.9f),
                             selectedContainerColor = colorScheme.primary.copy(alpha = 0.2f),

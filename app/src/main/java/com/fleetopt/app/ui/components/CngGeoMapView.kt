@@ -247,7 +247,7 @@ private fun generateMapHtml(
                 iconAnchor: [80, 13]
             });
             L.marker(cgsPos, { icon: cgsIcon }).addTo(map)
-                .bindPopup("<b>City Gate Mother Compression Hub</b><br>Header Pressure: 250 bar<br>Dedicated Fast-Fill Bays: 4<br>Coverage: 100 km Radius");
+                .bindPopup("<b>City Gate Mother Compression Hub</b><br>Header Pressure: 250 bar<br>Dedicated Fast-Fill Bays: 4<br>Regional Operations Hub");
 
             // 3. Daughter Stations
             const stations = [$stationsJson];

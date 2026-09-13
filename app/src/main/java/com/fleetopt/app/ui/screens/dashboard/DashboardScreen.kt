@@ -112,7 +112,7 @@ fun DashboardScreen(
                         ) {
                             Icon(
                                 imageVector = Icons.Default.Map,
-                                contentDescription = "100km Corridor Map",
+                                contentDescription = "Map",
                                 tint = MaterialTheme.colorScheme.primary,
                                 modifier = Modifier.size(18.dp)
                             )
@@ -171,7 +171,7 @@ fun DashboardScreen(
                 }
 
                 Text(
-                    text = "Real-time virtual pipeline & cascade inventory orchestration",
+                    text = "Real-time cascade inventory orchestration & HCV logistics",
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(top = 4.dp)
@@ -397,7 +397,7 @@ fun DashboardScreen(
                             Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                                 Icon(Icons.Default.Radar, contentDescription = null, tint = Cyan400, modifier = Modifier.size(18.dp))
                                 Text(
-                                    text = "100 KM HYDERABAD CORRIDOR RADAR",
+                                    text = "CORRIDOR TRANSIT RADAR",
                                     style = MaterialTheme.typography.labelSmall,
                                     color = Cyan400,
                                     fontWeight = FontWeight.Bold,
@@ -405,7 +405,7 @@ fun DashboardScreen(
                                 )
                             }
                             Text(
-                                text = "Regional virtual pipeline orchestration (100km perimeter)",
+                                text = "Station inventory & vehicle telemetry network",
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.8f)
                             )
@@ -418,7 +418,7 @@ fun DashboardScreen(
                         ) {
                             Icon(Icons.Default.Map, contentDescription = null, modifier = Modifier.size(14.dp))
                             Spacer(modifier = Modifier.width(4.dp))
-                            Text("100km Map", fontSize = 11.sp, fontWeight = FontWeight.Bold)
+                            Text("Map", fontSize = 11.sp, fontWeight = FontWeight.Bold)
                         }
                     }
 
@@ -444,7 +444,7 @@ fun DashboardScreen(
                     ) {
                         Icon(Icons.Default.Explore, contentDescription = null, tint = MaterialTheme.colorScheme.onPrimary, modifier = Modifier.size(16.dp))
                         Spacer(modifier = Modifier.width(FleetOptSpacing.xs))
-                        Text("Open 100km Interactive Geo Map (Zero-Key)", color = MaterialTheme.colorScheme.onPrimary, fontWeight = FontWeight.Bold)
+                        Text("Launch Map Center", color = MaterialTheme.colorScheme.onPrimary, fontWeight = FontWeight.Bold)
                     }
                 }
             }

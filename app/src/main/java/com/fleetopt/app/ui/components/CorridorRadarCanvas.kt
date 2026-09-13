@@ -110,7 +110,7 @@ fun CorridorRadarCanvas(
                 0.25f to "25 km",
                 0.50f to "50 km",
                 0.75f to "75 km",
-                1.00f to "100 KM REGIONAL PERIMETER"
+                1.00f to "OUTER PERIMETER"
             )
             ringRadii.forEach { (fraction, label) ->
                 val r = (minOf(size.width, size.height) * 0.45f) * fraction

@@ -252,7 +252,7 @@ fun RecommendationScreen(
                             Icon(Icons.Default.Map, contentDescription = null, tint = Cyan400, modifier = Modifier.size(16.dp))
                             Spacer(modifier = Modifier.width(8.dp))
                             Text(
-                                text = "View Route on 100km Corridor Map",
+                                text = "View Route on Map",
                                 fontWeight = FontWeight.SemiBold,
                                 fontSize = 12.sp
                             )
