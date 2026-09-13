@@ -237,6 +237,26 @@ fun RecommendationScreen(
                                 fontSize = 12.sp
                             )
                         }
+
+                        Spacer(modifier = Modifier.height(10.dp))
+
+                        OutlinedButton(
+                            onClick = onNavigateToMap,
+                            shape = RoundedCornerShape(10.dp),
+                            colors = ButtonDefaults.outlinedButtonColors(contentColor = Cyan400),
+                            border = ButtonDefaults.outlinedButtonBorder().copy(
+                                brush = androidx.compose.ui.graphics.SolidColor(Cyan500.copy(alpha = 0.5f))
+                            ),
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Icon(Icons.Default.Map, contentDescription = null, tint = Cyan400, modifier = Modifier.size(16.dp))
+                            Spacer(modifier = Modifier.width(8.dp))
+                            Text(
+                                text = "View Route on 100km Corridor Map",
+                                fontWeight = FontWeight.SemiBold,
+                                fontSize = 12.sp
+                            )
+                        }
                     }
                 }
             }

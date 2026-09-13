@@ -26,6 +26,7 @@ val Teal500 = Color(0xFF14B8A6)
 val Teal600 = Color(0xFF0D9488)
 
 val Cyan500 = Color(0xFF06B6D4)
+val Cyan400 = Color(0xFF22D3EE)
 val Blue500 = Color(0xFF3B82F6)
 
 // Urgency & Status colors

@@ -36,6 +36,7 @@ fun DashboardScreen(
     onNavigateToMap: () -> Unit,
     onNavigateToFleet: () -> Unit,
     onNavigateToStations: () -> Unit,
+    onNavigateToMore: () -> Unit = {},
     onSurgeChanged: (CalendarSurge) -> Unit,
     onScenarioChanged: (SimulationScenario) -> Unit,
     onAuthenticateAdmin: (String) -> Boolean,
@@ -87,15 +88,37 @@ fun DashboardScreen(
                         }
                     }
 
-                    // Admin Lock/Unlock & Data Provenance Badge
+                    // Map Shortcut, Admin Lock/Unlock, More Hub & Data Provenance Badge
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.spacedBy(FleetOptSpacing.sm)
+                        horizontalArrangement = Arrangement.spacedBy(6.dp)
                     ) {
                         DataProvenanceBadge(
                             provenance = if (uiState.isSimulationActive) DataProvenance.SIMULATED else DataProvenance.REAL
                         )
 
+                        // 1-Tap Map Access
+                        IconButton(
+                            onClick = onNavigateToMap,
+                            modifier = Modifier
+                                .clip(RoundedCornerShape(FleetOptSpacing.radiusFull))
+                                .background(MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.5f))
+                                .border(
+                                    1.dp,
+                                    MaterialTheme.colorScheme.primary.copy(alpha = 0.5f),
+                                    RoundedCornerShape(FleetOptSpacing.radiusFull)
+                                )
+                                .size(36.dp)
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Map,
+                                contentDescription = "100km Corridor Map",
+                                tint = MaterialTheme.colorScheme.primary,
+                                modifier = Modifier.size(18.dp)
+                            )
+                        }
+
+                        // Admin Access Lock
                         IconButton(
                             onClick = {
                                 if (uiState.isAdminMode) {
@@ -120,6 +143,27 @@ fun DashboardScreen(
                                 imageVector = if (uiState.isAdminMode) Icons.Default.LockOpen else Icons.Default.Lock,
                                 contentDescription = "Admin Access",
                                 tint = if (uiState.isAdminMode) Red400 else MaterialTheme.colorScheme.onSurfaceVariant,
+                                modifier = Modifier.size(18.dp)
+                            )
+                        }
+
+                        // More Operations Menu
+                        IconButton(
+                            onClick = onNavigateToMore,
+                            modifier = Modifier
+                                .clip(RoundedCornerShape(FleetOptSpacing.radiusFull))
+                                .background(MaterialTheme.colorScheme.surfaceVariant)
+                                .border(
+                                    1.dp,
+                                    MaterialTheme.colorScheme.outlineVariant,
+                                    RoundedCornerShape(FleetOptSpacing.radiusFull)
+                                )
+                                .size(36.dp)
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Menu,
+                                contentDescription = "Operations Menu",
+                                tint = MaterialTheme.colorScheme.onSurfaceVariant,
                                 modifier = Modifier.size(18.dp)
                             )
                         }
@@ -333,13 +377,13 @@ fun DashboardScreen(
             }
         }
 
-        // 5. Corridor Network Preview
+        // 5. 100 KM Corridor Radar & Geographic Network Showcase
         item {
             Card(
                 shape = RoundedCornerShape(FleetOptSpacing.radiusMd),
                 colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
                 border = CardDefaults.outlinedCardBorder().copy(
-                    brush = androidx.compose.ui.graphics.SolidColor(MaterialTheme.colorScheme.outlineVariant)
+                    brush = androidx.compose.ui.graphics.SolidColor(Cyan500.copy(alpha = 0.5f))
                 ),
                 modifier = Modifier.fillMaxWidth()
             ) {
@@ -350,22 +394,31 @@ fun DashboardScreen(
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Column {
+                            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                                Icon(Icons.Default.Radar, contentDescription = null, tint = Cyan400, modifier = Modifier.size(18.dp))
+                                Text(
+                                    text = "100 KM HYDERABAD CORRIDOR RADAR",
+                                    style = MaterialTheme.typography.labelSmall,
+                                    color = Cyan400,
+                                    fontWeight = FontWeight.Bold,
+                                    letterSpacing = 0.5.sp
+                                )
+                            }
                             Text(
-                                text = "CORRIDOR TRANSIT RADAR",
-                                style = MaterialTheme.typography.labelSmall,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                                fontWeight = FontWeight.Bold
-                            )
-                            Text(
-                                text = "Virtual pipeline distribution corridors",
+                                text = "Regional virtual pipeline orchestration (100km perimeter)",
                                 style = MaterialTheme.typography.bodySmall,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
+                                color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.8f)
                             )
                         }
 
-                        TextButton(onClick = onNavigateToMap) {
-                            Text("Full Map", color = MaterialTheme.colorScheme.primary, fontSize = 12.sp, fontWeight = FontWeight.Bold)
-                            Icon(Icons.Default.ArrowForward, contentDescription = null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(14.dp))
+                        FilledTonalButton(
+                            onClick = onNavigateToMap,
+                            contentPadding = PaddingValues(horizontal = 10.dp, vertical = 4.dp),
+                            shape = RoundedCornerShape(8.dp)
+                        ) {
+                            Icon(Icons.Default.Map, contentDescription = null, modifier = Modifier.size(14.dp))
+                            Spacer(modifier = Modifier.width(4.dp))
+                            Text("100km Map", fontSize = 11.sp, fontWeight = FontWeight.Bold)
                         }
                     }
 
@@ -374,10 +427,25 @@ fun DashboardScreen(
                     CorridorRadarCanvas(
                         stations = uiState.rawStations,
                         tankers = uiState.fleet,
+                        onStationClick = { onNavigateToMap() },
                         modifier = Modifier
                             .fillMaxWidth()
-                            .height(200.dp)
+                            .height(210.dp)
                     )
+
+                    Spacer(modifier = Modifier.height(FleetOptSpacing.sm))
+
+                    // Direct 1-Tap Launch Button to full Interactive Geo Map
+                    Button(
+                        onClick = onNavigateToMap,
+                        colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary),
+                        shape = RoundedCornerShape(FleetOptSpacing.radiusSm),
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Icon(Icons.Default.Explore, contentDescription = null, tint = MaterialTheme.colorScheme.onPrimary, modifier = Modifier.size(16.dp))
+                        Spacer(modifier = Modifier.width(FleetOptSpacing.xs))
+                        Text("Open 100km Interactive Geo Map (Zero-Key)", color = MaterialTheme.colorScheme.onPrimary, fontWeight = FontWeight.Bold)
+                    }
                 }
             }
         }

@@ -83,7 +83,7 @@ fun CorridorRadarCanvas(
                     detectTapGestures { tapOffset ->
                         val centerX = size.width / 2f
                         val centerY = size.height / 2f
-                        val scale = minOf(size.width, size.height) * 0.40f / 0.55f
+                        val scale = minOf(size.width, size.height) * 0.44f / 0.92f
 
                         for (station in stations) {
                             val dx = ((station.lng - cgsLng) * scale).toFloat()
@@ -102,18 +102,41 @@ fun CorridorRadarCanvas(
             val centerY = size.height / 2f
             val cgsPos = Offset(centerX, centerY)
 
-            // Dynamic scale: span across Hyderabad / Medak corridors (~0.55 deg)
-            val scale = minOf(size.width, size.height) * 0.40f / 0.55f
+            // Dynamic scale: span full 100 km radius circle around Hyderabad (~0.92 deg)
+            val scale = minOf(size.width, size.height) * 0.44f / 0.92f
 
-            // 1. Concentric radar distance rings (25 km, 50 km, 75 km, 100 km)
-            val ringRadii = listOf(0.25f, 0.50f, 0.75f, 1.0f)
-            ringRadii.forEachIndexed { index, fraction ->
-                val r = (minOf(size.width, size.height) * 0.46f) * fraction
+            // 1. Concentric radar distance rings: 25 km, 50 km, 75 km, 100 km
+            val ringRadii = listOf(
+                0.25f to "25 km",
+                0.50f to "50 km",
+                0.75f to "75 km",
+                1.00f to "100 KM REGIONAL PERIMETER"
+            )
+            ringRadii.forEach { (fraction, label) ->
+                val r = (minOf(size.width, size.height) * 0.45f) * fraction
+                val is100km = fraction == 1.00f
                 drawCircle(
-                    color = Slate800.copy(alpha = 0.6f),
+                    color = if (is100km) Cyan500.copy(alpha = 0.5f) else Slate800.copy(alpha = 0.6f),
                     radius = r,
                     center = cgsPos,
-                    style = Stroke(width = 1.dp.toPx(), pathEffect = PathEffect.dashPathEffect(floatArrayOf(8f, 8f)))
+                    style = Stroke(
+                        width = if (is100km) 2.dp.toPx() else 1.dp.toPx(),
+                        pathEffect = PathEffect.dashPathEffect(if (is100km) floatArrayOf(12f, 6f) else floatArrayOf(6f, 6f))
+                    )
+                )
+
+                // Draw distance text on top of each ring
+                val labelLayout = textMeasurer.measure(
+                    text = label,
+                    style = TextStyle(
+                        fontSize = if (is100km) 9.sp else 8.sp,
+                        fontWeight = if (is100km) FontWeight.Bold else FontWeight.Medium,
+                        color = if (is100km) Cyan500 else Slate500
+                    )
+                )
+                drawText(
+                    textLayoutResult = labelLayout,
+                    topLeft = Offset(centerX - (labelLayout.size.width / 2f), centerY - r - labelLayout.size.height - 2)
                 )
             }
 

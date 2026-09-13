@@ -25,7 +25,7 @@ import kotlinx.coroutines.launch
         HourlySalesEntity::class,
         DispatchTripEntity::class
     ],
-    version = 2,
+    version = 3,
     exportSchema = false
 )
 abstract class FleetOptDatabase : RoomDatabase() {
@@ -197,6 +197,91 @@ abstract class FleetOptDatabase : RoomDatabase() {
                     stationType = "DAUGHTER",
                     motherStationId = "cgs-medchal",
                     motherStationName = "CGS Medchal Mother Hub"
+                ),
+                StationEntity(
+                    id = "siddipet",
+                    name = "Siddipet FS",
+                    lat = 18.1018,
+                    lng = 78.8520,
+                    geometricVolumeLiters = 4000.0,
+                    currentPressureBar = 82.0,
+                    totalBays = 2,
+                    occupiedBays = 0,
+                    baselineDailyDemandKg = 2400.0,
+                    distanceKm = 88.0,
+                    traffic = "moderate",
+                    demandDeliveredTodayKg = 210.0,
+                    stationType = "DAUGHTER",
+                    motherStationId = "cgs-medchal",
+                    motherStationName = "CGS Medchal Mother Hub"
+                ),
+                StationEntity(
+                    id = "vikarabad",
+                    name = "Vikarabad FS",
+                    lat = 17.3364,
+                    lng = 77.9048,
+                    geometricVolumeLiters = 3500.0,
+                    currentPressureBar = 68.0,
+                    totalBays = 2,
+                    occupiedBays = 0,
+                    baselineDailyDemandKg = 1800.0,
+                    distanceKm = 72.0,
+                    traffic = "low",
+                    demandDeliveredTodayKg = 190.0,
+                    stationType = "DAUGHTER",
+                    motherStationId = "cgs-shamshabad",
+                    motherStationName = "CGS Shamshabad Mother Hub"
+                ),
+                StationEntity(
+                    id = "choutuppal",
+                    name = "Choutuppal FS",
+                    lat = 17.2462,
+                    lng = 78.9031,
+                    geometricVolumeLiters = 4200.0,
+                    currentPressureBar = 52.0,
+                    totalBays = 2,
+                    occupiedBays = 0,
+                    baselineDailyDemandKg = 3200.0,
+                    distanceKm = 65.0,
+                    traffic = "heavy",
+                    demandDeliveredTodayKg = 280.0,
+                    stationType = "DAUGHTER",
+                    motherStationId = "cgs-shamshabad",
+                    motherStationName = "CGS Shamshabad Mother Hub"
+                ),
+                StationEntity(
+                    id = "sangareddy",
+                    name = "Sangareddy FS",
+                    lat = 17.6140,
+                    lng = 78.0816,
+                    geometricVolumeLiters = 3800.0,
+                    currentPressureBar = 95.0,
+                    totalBays = 2,
+                    occupiedBays = 0,
+                    baselineDailyDemandKg = 2100.0,
+                    distanceKm = 55.0,
+                    traffic = "moderate",
+                    demandDeliveredTodayKg = 310.0,
+                    stationType = "DAUGHTER",
+                    motherStationId = "cgs-shamshabad",
+                    motherStationName = "CGS Shamshabad Mother Hub"
+                ),
+                StationEntity(
+                    id = "shadnagar",
+                    name = "Shadnagar FS",
+                    lat = 17.0722,
+                    lng = 78.2092,
+                    geometricVolumeLiters = 4000.0,
+                    currentPressureBar = 88.0,
+                    totalBays = 2,
+                    occupiedBays = 0,
+                    baselineDailyDemandKg = 2500.0,
+                    distanceKm = 50.0,
+                    traffic = "moderate",
+                    demandDeliveredTodayKg = 240.0,
+                    stationType = "DAUGHTER",
+                    motherStationId = "cgs-shamshabad",
+                    motherStationName = "CGS Shamshabad Mother Hub"
                 )
             )
             stationDao.insertStations(initialStations)

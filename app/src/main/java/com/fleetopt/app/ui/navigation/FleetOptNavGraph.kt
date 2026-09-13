@@ -148,6 +148,7 @@ fun FleetOptNavGraph(
                     onNavigateToMap = { navController.navigate(Screen.Map.route) },
                     onNavigateToFleet = { navController.navigate(Screen.Fleet.route) },
                     onNavigateToStations = { navController.navigate(Screen.Stations.route) },
+                    onNavigateToMore = { navController.navigate(Screen.More.route) },
                     onSurgeChanged = { viewModel.setCalendarSurge(it) },
                     onScenarioChanged = { viewModel.setScenario(it) },
                     onAuthenticateAdmin = { viewModel.authenticateAdmin(it) },

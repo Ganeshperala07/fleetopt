@@ -23,9 +23,9 @@ sealed class Screen(val route: String, val title: String, val icon: ImageVector)
         val bottomNavItems = listOf(
             Dashboard,
             Recommendation,
+            Map,
             Fleet,
-            Stations,
-            More
+            Stations
         )
     }
 }
